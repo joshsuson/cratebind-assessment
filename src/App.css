@@ -1,38 +1,238 @@
-.App {
-  text-align: center;
+/*---MAIN PAGE STYLES---*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-text-container {
+    text-align: center;
+    margin-block: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-text-container > h1, .header-text-container > h2 {
+    margin: 0;
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-text-container > h1 {
+    font-size: 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+.header-text-container > h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-text {
+    text-align: center;
+    margin-block: 4rem;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
+
+/*---SEARCH FORM STYLES---*/
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+    margin: 0 auto;
+}
+
+.search {
+    display: block;
+    width: 100%;
+    padding: .75rem .5rem;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #ccc;
+}
+
+.submit {
+    display: block;
+    font-weight: bold;
+    padding: .75rem 2rem;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid tomato;
+    background-color: tomato;
+    color: black;
+    cursor: pointer;
+}
+
+/*---USER CARD STYLES---*/
+
+.user-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 1rem;
+    padding: .5rem;
+    border-radius: 1rem;
+    border: 1px solid #00000025;
+    box-shadow: 0 0 10px 0 #00000025;
+}
+
+.user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-content > h2, .user-content > h3, .user-content > p {
+    margin: 0;
+    padding: 0;
+}
+
+.user-content > h2 {
+    text-transform: uppercase;
+    margin-bottom: .25rem;
+}
+
+.user-content > h3 {
+    color: tomato;
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+
+.user-content > p {
+    color: #00000064
+}
+
+/*---REPOSITORY LIST STYLES---*/
+
+.repository-list {
+    padding: 0;
+    padding-inline: 1rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.repository-card {
+    width: 350px;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #00000025;
+    box-shadow: 0 0 10px 0 #00000025;
+}
+
+.repository-card > h3, .repository-card > p {
+    margin: 0;
+    padding: 0;
+}
+
+.repository-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: .25rem;
+    margin-bottom: .5rem;
+}
+
+.repository-info > span {
+    font-size: .75rem;
+    font-weight: bold;
+    color: tomato;
+}
+
+.repository-card > p {
+    color: #00000064;
+    margin-bottom: .5rem;
+}
+
+.repository-card > a {
+    display: block;
+    text-align: right;
+    color: tomato;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: .5rem;
+}
+
+/*---LOADING STYLES---*/
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid tomato;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+
+/*---MEDIA QUERIES---*/
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 50%;
+        padding-inline: 0;
+    }
+
+    .user-card {
+        width: 50%;
+        margin: 4rem auto;
+    }
+
+    .repository-list {
+        padding-inline: 0;
+    }
+}
+
+
+
+
+
+
+
